@@ -7,10 +7,10 @@
 # --- multiprocessing ---   
 #
 # --- 使用する前に ---------------------------
-# 17行目 : URL1を指定
-# 18行目 : URL2を指定
-# 24行目 : 取得するURLを特定するためのHTMLを指定
-# 31行目 : ファイルの拡張子を指定
+# 23行目 : URL1を指定
+# 24行目 : URL2を指定
+# 30行目 : 取得するURLを特定するためのHTMLを指定
+# 37行目 : ファイルの拡張子を指定
 # --------------------------------------------
 from multiprocessing import Process
 from urllib.request import urlretrieve

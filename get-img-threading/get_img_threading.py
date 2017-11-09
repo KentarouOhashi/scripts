@@ -7,11 +7,11 @@
 # --- threading ---
 #
 # --- 使用する前に ---------------------------
-# 17行目 : URLを指定
-# 18行目 : URLを指定
-# 31行目 : ファイルの拡張子を指定
-# 45行目 : 画像へのURLを特定するためのHTMLを記述
-# 52行目 : ファイルの拡張子を指定
+# 24行目 : URLを指定
+# 25行目 : URLを指定
+# 38行目 : ファイルの拡張子を指定
+# 52行目 : 画像へのURLを特定するためのHTMLを記述
+# 59行目 : ファイルの拡張子を指定
 # --------------------------------------------
 from urllib.request import urlretrieve
 from urllib.request import urlopen
@@ -23,14 +23,6 @@ import os
 
 URL1 = "<URL>"
 URL2 = "<URL>"
-
-def get_specific_url(url):
-    """画像へのURLを取得しリストを返す"""
-    html = urlopen(url)
-    bsobj = BeautifulSoup(html, "html.parser")
-    specific_urls = [i.get("href") for i in bsobj.find("div",
-                                                {"class":"more"}).findAll("a")]
-    return specific_urls
 
 class MultiprocessScraping(threading.Thread):
     """ threading.Threadのサブクラスの定義"""
@@ -52,6 +44,14 @@ class MultiprocessScraping(threading.Thread):
                                         "url1-" + os.path.basename(img_url))
                 print("[1st] : " + img_url + "  downloaded.", end="\n")
                 time.sleep(self.time)
+
+def get_specific_url(url):
+    """画像へのURLを取得しリストを返す"""
+    html = urlopen(url)
+    bsobj = BeautifulSoup(html, "html.parser")
+    specific_urls = [i.get("href") for i in bsobj.find("div",
+                                                {"class":"more"}).findAll("a")]
+    return specific_urls
 
 def multiprocess_scraping(url2, time2):
     """GIF画像へのURLを取得し、画像をダウンロードするメソッド"""

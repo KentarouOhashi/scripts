@@ -4,9 +4,9 @@
 # 指定したWebサイトから指定した拡張子の画像をダウンロード
 #
 # --- 使用する前に ---
-# 15行目 : URLを指定
-# 21行目 : 目的のWebサイトに合わせてHTMLタグを指定
-# 28行目 : ファイルの拡張子を指定
+# 18行目 : URLを指定
+# 24行目 : 目的のWebサイトに合わせてHTMLタグを指定
+# 31行目 : ファイルの拡張子を指定
 # --------------------
 from urllib.request import urlretrieve
 from urllib.request import urlopen
