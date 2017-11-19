@@ -25,7 +25,7 @@ def get_specific_url(url):
                                                             .findAll("a")]
     return specific_urls
 
-def _main(url, t):
+def main(url, t):
     for img_url in get_specific_url(url):
         if re.search(r"\.gif$", img_url):
             rel = urlopen(img_url)
@@ -36,4 +36,4 @@ def _main(url, t):
             time.sleep(t)
 
 if __name__ == "__main__":
-    _main(BASE_URL, 3)
+    main(BASE_URL, 3)

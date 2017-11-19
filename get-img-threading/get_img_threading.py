@@ -66,7 +66,7 @@ def multiprocess_scraping(url2, time2):
             print("[2nd] : " + img_url + "  downloaded.", end="\n")
             time.sleep(time2)
 
-def _main(url1, time1, url2, time2):
+def main(url1, time1, url2, time2):
     thread1 = MultiprocessScraping(url1, time1)
     thread1.start()
 
@@ -76,4 +76,4 @@ def _main(url1, time1, url2, time2):
     thread2.start()
 
 if __name__ == "__main__":
-    _main(URL1, 2, URL2, 3)
+    main(URL1, 2, URL2, 3)

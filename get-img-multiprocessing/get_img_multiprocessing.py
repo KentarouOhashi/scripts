@@ -2,9 +2,9 @@
 # coding: utf-8
 #
 # 2つのWebサイトから並列処理にて
-# 指定した拡張子の画像をダウンロードするスクリプト 
+# 指定した拡張子の画像をダウンロードするスクリプト
 #
-# --- multiprocessing ---   
+# --- multiprocessing ---
 #
 # --- 使用する前に ---------------------------
 # 23行目 : URL1を指定
@@ -45,7 +45,7 @@ def get_img(url, t, labelfile, labelout):
                                                                     end="\n")
             time.sleep(t)
 
-def _main(url1, t1, ulabel1, label1, url2, t2, ulabel2, label2):
+def main(url1, t1, ulabel1, label1, url2, t2, ulabel2, label2):
     process1 = Process(name="process1", target=get_img,
                                                 args=(url1, t1, ulabel1, label1))
     process2 = Process(name="process2", target=get_img,
@@ -57,4 +57,4 @@ def _main(url1, t1, ulabel1, label1, url2, t2, ulabel2, label2):
     process2.join()
 
 if __name__ == "__main__":
-    _main(URL1, 2, "url1-", "1st", URL2, 3, "url2-", "2nd")
+    main(URL1, 2, "url1-", "1st", URL2, 3, "url2-", "2nd")

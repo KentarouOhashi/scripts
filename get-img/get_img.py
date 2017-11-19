@@ -26,7 +26,7 @@ def get_img_url(url):
 
     return img_urls
 
-def _main(url):
+def main(url):
     for img_url in get_img_url(url):
         if re.search(r"\.gif$", img_url):
             res = urlopen(img_url)
@@ -37,4 +37,4 @@ def _main(url):
             time.sleep(5)
 
 if __name__ == "__main__":
-    _main(BASE_URL)
+    main(BASE_URL)

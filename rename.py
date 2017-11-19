@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# 
+#
 # ファイルをリネームするスクリプト
 #
 # --- 使用する前に ---
@@ -10,7 +10,7 @@
 import os
 import re
 
-def _main():
+def main():
     i = 1
     files = os.listdir('.')
     for file in files:
@@ -21,4 +21,4 @@ def _main():
             pass
 
 if __name__ == '__main__':
-    _main()
+    main()
